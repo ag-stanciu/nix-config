@@ -15,7 +15,7 @@
 
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
   };
-  outputs = inputs@{ nixpkgs, darwin, home-manager, neovim-nightly, ... }:
+  outputs = inputs@{ self, nixpkgs, darwin, home-manager, neovim-nightly, ... }:
     let
       overlays = [ neovim-nightly.overlay ];
       darwinSystem = { system, username }:
@@ -48,5 +48,6 @@
         system = "aarch64-darwin";
         username = "alex";
       };
+      packages.aarch64-darwin.default = self.darwinConfigurations."mblue".system;
     };
 }

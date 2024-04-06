@@ -49,7 +49,7 @@
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
-    nir-direnv.enable = true;
+    nix-direnv.enable = true;
   };
 
   programs.starship = {

@@ -24,7 +24,6 @@
     fontDir.enable = true;
     fonts = with pkgs; [
       (nerdfonts.override { fonts = [ "Hasklig" "NerdFontsSymbolsOnly" ]; })
-      "source-code-pro"
     ];
   };
 
@@ -61,12 +60,11 @@
     masApps = { };
     casks = [
       "maccy"
-      "firefox"
+      "arc"
       "appcleaner"
       "rectangle"
       "spotify"
       "the-unarchiver"
-      # "wezterm"
       "kitty"
       "insomnia"
     ];
