@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.11";
   home.sessionVariables = {
     CLICOLOR = 1;
     EDITOR = "nvim";
@@ -64,11 +64,15 @@
     package = pkgs.neovim-nightly;
   };
   home.file.".config/nvim" = {
-    source = ./dotfiles/nvim;
+    source = ./configs/.config/nvim;
     recursive = true;
   };
 
   # Config files
-  home.file.".config/wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
-  home.file.".tmux.conf".source = ./dotfiles/tmux.conf;
+  # home.file.".config/wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
+  home.file.".config/tmux/tmux.conf".source = ./configs/.config/tmux/tmux.conf;
+  home.file.".config/kitty" = {
+    source = ./configs/.config/kitty;
+    recursive = true;
+  };
 }

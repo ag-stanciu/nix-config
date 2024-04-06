@@ -44,5 +44,9 @@
         system = "aarch64-darwin";
         username = "alex";
       };
+      darwinConfigurations.vmdev = darwinSystem {
+        system = "aarch64-darwin";
+        username = "alex";
+      };
     };
 }

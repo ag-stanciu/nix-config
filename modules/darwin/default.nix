@@ -22,7 +22,10 @@
 
   fonts = {
     fontDir.enable = true;
-    fonts = [ (pkgs.nerdfonts.override { fonts = [ "Hasklig" ]; }) ];
+    fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "Hasklig" "NerdFontsSymbolsOnly" ]; })
+      "source-code-pro"
+    ];
   };
 
   nix = {
@@ -63,7 +66,8 @@
       "rectangle"
       "spotify"
       "the-unarchiver"
-      "wezterm"
+      # "wezterm"
+      "kitty"
       "insomnia"
     ];
   };
