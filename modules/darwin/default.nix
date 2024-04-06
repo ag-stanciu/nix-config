@@ -14,9 +14,9 @@
       minimize-to-application = true;
       mineffect = "scale";
     };
-    files = {
-      showPathbar = true;
-      showStatusBar = true;
+    finder = {
+      ShowPathbar = true;
+      ShowStatusBar = true;
     };
   };
 
