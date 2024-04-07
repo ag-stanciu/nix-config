@@ -10,12 +10,12 @@
     NSGlobalDomain.ApplePressAndHoldEnabled = false;
     dock = {
       autohide = true;
+      mineffect = "scale";
+      minimize-to-application = true;
+      mru-spaces = false;
       orientation = "left";
       show-recents = false;
       tilesize = 48;
-      minimize-to-application = true;
-      mineffect = "scale";
-      mru-spaces = false;
     };
     finder = {
       ShowPathbar = true;
@@ -67,14 +67,16 @@
     global.brewfile = true;
     masApps = { };
     casks = [
-      "maccy"
-      "arc"
       "appcleaner"
+      "arc"
+      "bitwarden"
+      "google-chrome"
+      "insomnia"
+      "kitty"
+      "maccy"
       "rectangle"
       "spotify"
       "the-unarchiver"
-      "kitty"
-      "insomnia"
     ];
   };
 }

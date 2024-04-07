@@ -8,18 +8,19 @@
   };
   home.packages = with pkgs; [
     awscli2
-    fd
+    cargo
     curl
-    ripgrep
+    fd
+    fnm
     go
+    gnupg
     hyperfine
     jq
-    wget
-    tmux
-    rustc
-    cargo
     python3
-    fnm
+    ripgrep
+    rustc
+    tmux
+    wget
   ];
 
   programs.git = {
@@ -43,10 +44,10 @@
     '';
     shellAliases = {
       grep = "grep --color=auto";
-      v = "nvim";
       ls = "ls --color=auto";
-      nixup = "pushd ~/nixcfg; nix flake update; popd";
       nixsw = "darwin-rebuild switch --flake ~/nixcfg/.#";
+      nixup = "pushd ~/nixcfg; nix flake update; popd";
+      v = "nvim";
     };
   };
 
