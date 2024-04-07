@@ -3,9 +3,11 @@
 
   system.stateVersion = 4;
   system.defaults = {
+    screencapture.type = "jpg";
     NSGlobalDomain.AppleShowAllExtensions = true;
     NSGlobalDomain.InitialKeyRepeat = 14;
     NSGlobalDomain.KeyRepeat = 1;
+    NSGlobalDomain.ApplePressAndHoldEnabled = false;
     dock = {
       autohide = true;
       orientation = "left";
@@ -13,16 +15,22 @@
       tilesize = 48;
       minimize-to-application = true;
       mineffect = "scale";
+      mru-spaces = false;
     };
     finder = {
       ShowPathbar = true;
       ShowStatusBar = true;
     };
   };
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
+  };
 
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
+      source-code-pro
       (nerdfonts.override { fonts = [ "Hasklig" "NerdFontsSymbolsOnly" ]; })
     ];
   };

@@ -17,6 +17,8 @@
     tmux
     rustc
     cargo
+    python3
+    fnm
   ];
 
   programs.git = {
@@ -34,6 +36,9 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    initExtra = ''
+      eval "$(fnm env --use-on-cd)"
+    '';
     shellAliases = {
       ls = "ls --color=auto";
       nixup = "pushd ~/nixcfg; nix flake update; popd";
