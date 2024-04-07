@@ -4,6 +4,7 @@
     CLICOLOR = 1;
     EDITOR = "nvim";
     LC_CTYPE = "en_US.UTF-8";
+    GPG_TTY = "$(tty)";
   };
   home.packages = with pkgs; [
     awscli2
@@ -38,8 +39,11 @@
     enableCompletion = true;
     initExtra = ''
       eval "$(fnm env --use-on-cd)"
+      [[ -e "${HOME}/.workrc" ]] && source "${HOME}/.workrc"
     '';
     shellAliases = {
+      grep = "grep --color=auto";
+      v = "nvim";
       ls = "ls --color=auto";
       nixup = "pushd ~/nixcfg; nix flake update; popd";
       nixsw = "darwin-rebuild switch --flake ~/nixcfg/.#";
@@ -80,4 +84,5 @@
     source = ./configs/config/kitty;
     recursive = true;
   };
+  home.file.".hushlogin" = ./configs/.hushlogin;
 }
