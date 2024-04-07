@@ -40,7 +40,7 @@
     enableCompletion = true;
     initExtra = ''
       eval "$(fnm env --use-on-cd)"
-      [[ -e "${HOME}/.workrc" ]] && source "${HOME}/.workrc"
+      [[ -e "''${HOME}/.workrc" ]] && source "''${HOME}/.workrc"
     '';
     shellAliases = {
       grep = "grep --color=auto";
@@ -85,5 +85,5 @@
     source = ./configs/config/kitty;
     recursive = true;
   };
-  home.file.".hushlogin" = ./configs/.hushlogin;
+  home.file.".hushlogin".source = ./configs/.hushlogin;
 }
