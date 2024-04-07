@@ -61,7 +61,7 @@
     enable = true;
     enableZshIntegration = true;
   };
-  home.file.".config/starship.toml".source = ./dotfiles/starship.toml;
+  home.file.".config/starship.toml".source = ./configs/starship.toml;
 
   # Neovim
   programs.neovim = {
@@ -69,15 +69,15 @@
     package = pkgs.neovim-nightly;
   };
   home.file.".config/nvim" = {
-    source = ./configs/.config/nvim;
+    source = ./configs/config/nvim;
     recursive = true;
   };
 
   # Config files
   # home.file.".config/wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
-  home.file.".config/tmux/tmux.conf".source = ./configs/.config/tmux/tmux.conf;
+  home.file.".config/tmux/tmux.conf".source = ./configs/config/tmux/tmux.conf;
   home.file.".config/kitty" = {
-    source = ./configs/.config/kitty;
+    source = ./configs/config/kitty;
     recursive = true;
   };
 }

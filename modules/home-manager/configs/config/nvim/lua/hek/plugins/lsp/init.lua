@@ -23,7 +23,8 @@ return {
                 "gopls",
                 "jsonls",
                 "yamlls",
-                "graphql"
+                "graphql",
+                "nil_ls"
             }
         })
         local nvim_lsp = require('lspconfig')
@@ -122,7 +123,7 @@ return {
             -- 'terraformls',
             'bashls',
             -- 'clangd',
-            'rnix',
+            'nil_ls',
         }
         for _, server in ipairs(servers) do
             nvim_lsp[server].setup {
