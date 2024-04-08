@@ -1,10 +1,10 @@
 {
   description = "system config";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -18,6 +18,7 @@
   outputs = inputs@{ self, nixpkgs, darwin, home-manager, neovim-nightly, ... }:
     let
       overlays = [ neovim-nightly.overlay ];
+      home-config = import ./modules/home-manager { inherit inputs; };
       darwinSystem = { system, username }:
         darwin.lib.darwinSystem
           {
@@ -32,7 +33,7 @@
                 home-manager = {
                   useGlobalPkgs = true;
                   useUserPackages = true;
-                  users.${username}.imports = [ ./modules/home-manager ];
+                  users.${username} = home-config;
                 };
               }
             ];

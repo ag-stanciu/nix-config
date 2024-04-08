@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs }:{ pkgs, config, ... }: {
   home.stateVersion = "23.11";
   home.sessionVariables = {
     CLICOLOR = 1;
