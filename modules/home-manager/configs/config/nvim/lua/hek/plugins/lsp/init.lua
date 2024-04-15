@@ -24,7 +24,8 @@ return {
                 "jsonls",
                 "yamlls",
                 "graphql",
-                "nil_ls"
+                "nil_ls",
+                "prismals",
             }
         })
         local nvim_lsp = require('lspconfig')
@@ -124,6 +125,7 @@ return {
             'bashls',
             -- 'clangd',
             'nil_ls',
+            'prismals',
         }
         for _, server in ipairs(servers) do
             nvim_lsp[server].setup {

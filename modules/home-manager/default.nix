@@ -66,7 +66,11 @@
     enable = true;
     enableZshIntegration = true;
   };
-  home.file.".config/starship.toml".source = ./configs/starship.toml;
+
+  home.file.".config/starship.toml" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixcfg/modules/home-manager/configs/starship.toml";
+    recursive = true;
+  };
 
   # Neovim
   programs.neovim = {
@@ -74,15 +78,22 @@
     package = pkgs.neovim-nightly;
   };
   home.file.".config/nvim" = {
-    source = ./configs/config/nvim;
+    # source = config.lib.file.mkOutOfStoreSymlink ./configs/config/nvim;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixcfg/modules/home-manager/configs/config/nvim";
     recursive = true;
   };
 
   # Config files
   # home.file.".config/wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
-  home.file.".config/tmux/tmux.conf".source = ./configs/config/tmux/tmux.conf;
+  home.file.".config/tmux" = {
+    # source = ./configs/config/tmux/tmux.conf;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixcfg/modules/home-manager/configs/config/tmux";
+    recursive = true;
+  };
+
   home.file.".config/kitty" = {
-    source = ./configs/config/kitty;
+    # source = ./configs/config/kitty;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixcfg/modules/home-manager/configs/config/kitty";
     recursive = true;
   };
   home.file.".hushlogin".source = ./configs/.hushlogin;
