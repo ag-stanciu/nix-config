@@ -75,6 +75,7 @@
   # Neovim
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
     package = pkgs.neovim-nightly;
   };
   home.file.".config/nvim" = {
