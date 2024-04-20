@@ -12,12 +12,12 @@
     curl
     fd
     fnm
-    go
     gnupg
+    go
     hyperfine
     jq
-    pipx
     pinentry_mac
+    pipx
     python3
     ripgrep
     ssm-session-manager-plugin
@@ -33,9 +33,10 @@
       # signByDefault = true;
     };
     aliases = {
-      st = "status -sb";
       cim = "commit -m";
       lg = "log --pretty=format:%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --date=short";
+      rbi = "rebase -i";
+      st = "status -sb";
     };
   };
 
@@ -53,6 +54,10 @@
       nixsw = "darwin-rebuild switch --flake ~/nixcfg/.#";
       nixup = "pushd ~/nixcfg; nix flake update; popd";
       v = "nvim";
+    };
+    history = {
+      size = 100000;
+      ignoreDups = true;
     };
   };
 
