@@ -16,9 +16,11 @@
     gnupg
     hyperfine
     jq
+    pipx
     pinentry_mac
     python3
     ripgrep
+    ssm-session-manager-plugin
     wget
   ];
 
@@ -28,7 +30,7 @@
     userEmail = "ag.stanciu@gmail.com";
     signing = {
       key = "C00A4B382F09CAD51E264FBAD37D8E3F3ADB8E63";
-      signByDefault = true;
+      # signByDefault = true;
     };
     aliases = {
       st = "status -sb";
@@ -101,4 +103,10 @@
     recursive = true;
   };
   home.file.".hushlogin".source = ./configs/.hushlogin;
+
+  home.file.".config/zed" = {
+    # source = ./configs/config/kitty;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixcfg/modules/home-manager/configs/config/zed";
+    recursive = true;
+  };
 }
