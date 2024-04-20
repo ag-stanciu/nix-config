@@ -24,8 +24,8 @@ return {
                 "jsonls",
                 "yamlls",
                 "graphql",
-                "nil_ls",
-                "prismals",
+                "zls",
+                "prismals"
             }
         })
         local nvim_lsp = require('lspconfig')
@@ -42,7 +42,8 @@ return {
 
         -- LSP settings
         local on_attach = function(client, bufnr)
-            vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+            -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+            vim.api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
 
             vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, popup_opts)
             vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, popup_opts)
@@ -52,7 +53,7 @@ return {
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
             vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-            vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+            -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
             vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
             vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
             vim.keymap.set('n', '<leader>wl', function()
@@ -102,8 +103,8 @@ return {
         vim.diagnostic.config {
             virtual_text = false,
             float = {
-                header = false,
-                source = "always",
+                -- header = false,
+                source = true,
             },
             signs = true,
             underline = false,
@@ -124,7 +125,8 @@ return {
             -- 'terraformls',
             'bashls',
             -- 'clangd',
-            'nil_ls',
+            'rnix',
+            'zls',
             'prismals',
         }
         for _, server in ipairs(servers) do

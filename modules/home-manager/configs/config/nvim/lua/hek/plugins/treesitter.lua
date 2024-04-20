@@ -37,7 +37,6 @@ return {
                 'zig',
                 'prisma',
             },
-            ignore_install = { 'phpdoc' },
             highlight = {
                 enable = true, -- false will disable the whole extension
                 use_languagetree = true

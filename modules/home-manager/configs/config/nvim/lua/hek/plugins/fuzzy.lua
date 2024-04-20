@@ -11,20 +11,19 @@ return {
         keys = {
             { "<leader><space>", "<cmd>Telescope buffers<CR>" },
             { "<leader>ff",      "<cmd>Telescope find_files<CR>" },
+            { "<leader>fg",      "<cmd>Telescope git_files<CR>" },
             { "<leader>fb",      "<cmd>Telescope current_buffer_fuzzy_find<CR>" },
             { "<leader>fh",      "<cmd> Telescope help_tags<CR>" },
             { "<leader>ft",      "<cmd> Telescope tags<CR>" },
             { "<leader>fs",      "<cmd> Telescope grep_string<CR>" },
             { "<leader>fw",      "<cmd> Telescope live_grep<CR>" },
-            -- { "<leader>fo", function(}
-            --     <cmd>Telescope tags { only_current_buffer = true }
-            -- end}
             { "<leader>?",       "<cmd> Telescope oldfiles<CR>" },
             { "<leader>gt",      "<cmd> Telescope git_status<CR>" },
             { "<leader>fr",      "<cmd> Telescope lsp_references<CR>" }
         },
         config = function()
             local telescope = require("telescope")
+            local builtin = require("telescope.builtin")
             local actions = require("telescope.actions")
             local u = require("hek.util")
 
@@ -72,7 +71,7 @@ return {
                         file_sorter = require("telescope.sorters").get_fuzzy_file,
                         file_ignore_patterns = {},
                         generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-                        path_display = { "absolute" },
+                        -- path_display = { "absolute" },
                         winblend = 0,
                         border = true,
                         -- borderchars = { "" },
@@ -89,7 +88,12 @@ return {
                         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
                         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
                         -- Developer configurations: Not meant for general override
-                        buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker
+                        buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+                        path_display = {
+                            filename_first = {
+                                reverse_directories = true
+                            }
+                        }
                     },
                     extensions = {
                         fzf = {
@@ -106,6 +110,11 @@ return {
             telescope.load_extension('ui-select')
 
             --Add leader shortcuts
+            vim.keymap.set("n", "<leader>fu", function ()
+                local word = vim.fn.expand("<cword>")
+                builtin.grep_string({ search = word })
+
+            end)
             -- vim.keymap.set("n", "<leader><space>", require('telescope.builtin').buffers)
             -- vim.keymap.set("n", "<leader>ff", require('telescope.builtin').find_files)
             -- vim.keymap.set("n", "<leader>fb", require('telescope.builtin').current_buffer_fuzzy_find)
