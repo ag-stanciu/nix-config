@@ -21,11 +21,17 @@
       ShowPathbar = true;
       ShowStatusBar = true;
     };
+    # universalaccess.reduceMotion = true;
   };
   system.keyboard = {
     enableKeyMapping = true;
     remapCapsLockToEscape = true;
   };
+
+  system.activationScripts.postUserActivation.text = ''
+    # Following line should allow us to avoid a logout/login cycle
+    /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+  '';
 
   fonts = {
     fontDir.enable = true;
@@ -66,6 +72,9 @@
     caskArgs.no_quarantine = true;
     global.brewfile = true;
     masApps = { };
+    taps = [
+      "homebrew/cask-versions"
+    ];
     casks = [
       "appcleaner"
       "arc"
@@ -74,6 +83,7 @@
       "docker"
       "google-chrome"
       "google-drive"
+      "logi-options-plus"
       "insomnia"
       "insomnium"
       "insomnium"
@@ -81,8 +91,9 @@
       "maccy"
       "rectangle"
       "spotify"
+      "slack"
       "the-unarchiver"
-      "zed"
+      "zed-preview"
     ];
   };
 }
