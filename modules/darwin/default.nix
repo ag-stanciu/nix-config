@@ -8,6 +8,7 @@
     NSGlobalDomain.InitialKeyRepeat = 14;
     NSGlobalDomain.KeyRepeat = 1;
     NSGlobalDomain.ApplePressAndHoldEnabled = false;
+    NSGlobalDomain.AppleFontSmoothing = 1;
     dock = {
       autohide = true;
       mineffect = "scale";
@@ -42,15 +43,20 @@
   };
 
   nix = {
-    extraOptions = ''
-      experimental-features = nix-command flakes
-      warn-dirty = false
-    '';
     gc = {
       automatic = true;
       options = "--delete-older-than 7d";
     };
-    settings = { auto-optimise-store = true; };
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = ["flakes" "nix-command"];
+      builders-use-substitutes = true;
+      substituters = ["https://nix-community.cachix.org"];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+      warn-dirty = false;
+    };
   };
 
   environment = {
@@ -83,17 +89,18 @@
       "docker"
       "google-chrome"
       "google-drive"
-      "logi-options-plus"
       "insomnia"
       "insomnium"
       "insomnium"
       "kitty"
+      "logi-options-plus"
       "maccy"
       "rectangle"
-      "spotify"
       "slack"
+      "spotify"
       "the-unarchiver"
       "zed-preview"
+      "zoom"
     ];
   };
 }
