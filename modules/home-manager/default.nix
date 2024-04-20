@@ -18,8 +18,6 @@
     jq
     python3
     ripgrep
-    rustc
-    tmux
     wget
   ];
 
@@ -86,11 +84,11 @@
 
   # Config files
   # home.file.".config/wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
-  home.file.".config/tmux" = {
-    # source = ./configs/config/tmux/tmux.conf;
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixcfg/modules/home-manager/configs/config/tmux";
-    recursive = true;
-  };
+  # home.file.".config/tmux" = {
+  #   # source = ./configs/config/tmux/tmux.conf;
+  #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixcfg/modules/home-manager/configs/config/tmux";
+  #   recursive = true;
+  # };
 
   home.file.".config/kitty" = {
     # source = ./configs/config/kitty;
