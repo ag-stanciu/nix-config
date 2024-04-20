@@ -89,8 +89,6 @@
       "docker"
       "google-chrome"
       "google-drive"
-      "insomnia"
-      "insomnium"
       "insomnium"
       "kitty"
       "logi-options-plus"
