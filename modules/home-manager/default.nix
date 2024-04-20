@@ -16,6 +16,7 @@
     gnupg
     hyperfine
     jq
+    pinentry_mac
     python3
     ripgrep
     wget
@@ -25,10 +26,14 @@
     enable = true;
     userName = "Alex Stanciu";
     userEmail = "ag.stanciu@gmail.com";
+    signing = {
+      key = "C00A4B382F09CAD51E264FBAD37D8E3F3ADB8E63";
+      signByDefault = true;
+    };
     aliases = {
       st = "status -sb";
       cim = "commit -m";
-      lg = "log --pretty=format:'%C:(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]' --decorate --date=short";
+      lg = "log --pretty=format:%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --date=short";
     };
   };
 

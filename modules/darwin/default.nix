@@ -70,14 +70,17 @@
       "appcleaner"
       "arc"
       "bitwarden"
+      "dbeaver-community"
       "google-chrome"
       "insomnia"
+      "insomnium"
       "insomnium"
       "kitty"
       "maccy"
       "rectangle"
       "spotify"
       "the-unarchiver"
+      "zed"
     ];
   };
 }

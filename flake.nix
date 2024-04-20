@@ -41,7 +41,7 @@
           };
     in
     {
-      darwinConfigurations.mblue = darwinSystem {
+      darwinConfigurations.mgray = darwinSystem {
         system = "aarch64-darwin";
         username = "alex";
       };

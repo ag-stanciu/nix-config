@@ -26,7 +26,8 @@ return {
                 "yamlls",
                 "graphql",
                 "zls",
-                "prismals"
+                "prismals",
+                "nil_ls"
             }
         })
         local nvim_lsp = require('lspconfig')
@@ -126,7 +127,7 @@ return {
             -- 'terraformls',
             'bashls',
             -- 'clangd',
-            'rnix',
+            'nil_ls',
             'zls',
             'prismals',
         }
