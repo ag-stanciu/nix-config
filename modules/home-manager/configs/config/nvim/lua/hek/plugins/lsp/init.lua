@@ -18,6 +18,7 @@ return {
                 "lua_ls",
                 "tsserver",
                 "eslint",
+                "dockerls",
                 -- "terraformls",
                 "bashls",
                 "gopls",
