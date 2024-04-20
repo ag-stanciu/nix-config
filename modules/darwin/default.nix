@@ -72,6 +72,7 @@
       "bitwarden"
       "google-chrome"
       "insomnia"
+      "insomnium"
       "kitty"
       "maccy"
       "rectangle"
