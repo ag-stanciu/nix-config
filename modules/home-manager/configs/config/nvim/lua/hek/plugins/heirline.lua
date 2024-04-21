@@ -329,7 +329,7 @@ return {
                 return conditions.hide_in_width(120) and conditions.lsp_attached()
             end,
             update = { "LspAttach", "LspDetach" },
-            hl = { bg = colors.bg_dark, fg = colors.green, bold = true, italic = false },
+            hl = { bg = colors.bg_dark, fg = colors.green, bold = false, italic = false },
             InvLeftSep,
             {
                 provider = function()
@@ -340,7 +340,7 @@ return {
                         end
                     end
                     -- return "  " .. table.concat(names, " ") .. " "
-                    return " "
+                    return "  "
                 end,
             },
             InvRightSep,

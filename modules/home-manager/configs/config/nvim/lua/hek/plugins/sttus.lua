@@ -1,6 +1,7 @@
 return {}
 -- return {
 --     "sontungexpt/sttusline",
+--     branch = "table_version",
 --     dependencies = {
 --         "nvim-tree/nvim-web-devicons",
 --     },
@@ -9,25 +10,18 @@ return {}
 --         local util = require("hek.util")
 --         local colors = require("hek.color").colors
 --         local diagnostics = require("sttusline.components.diagnostics")
---         diagnostics.set_config {
---             icons = {
---                 ERROR = util.signs.Error,
---                 INFO = util.signs.Info,
---                 HINT = util.signs.Hint,
---                 WARN = util.signs.Warn,
---             },
---             order = { "ERROR", "WARN", "INFO", "HINT" },
---         }
---         local git_diff = require("sttusline.components.git-diff")
---
---         git_diff.set_config {
---             icons = {
---                 added = "",
---                 changed = "",
---                 removed = "",
---             },
---             order = { "added", "changed", "removed" },
---         }
+--         -- diagnostics.set_config {
+--         -- }
+--         -- local git_diff = require("sttusline.components.git-diff")
+--         --
+--         -- git_diff.set_config {
+--         --     icons = {
+--         --         added = "",
+--         --         changed = "",
+--         --         removed = "",
+--         --     },
+--         --     order = { "added", "changed", "removed" },
+--         -- }
 --         require("sttusline").setup {
 --             statusline_color = colors.bg,
 --             -- statusline_color = "StatusLine",
@@ -47,10 +41,41 @@ return {}
 --             components = {
 --                 "mode",
 --                 -- "filename",
---                 "git-branch",
---                 "git-diff",
+--                 {
+--                     "git-branch",
+--                     {
+--                         colors = { fg = colors.blue }
+--                     }
+--                 },
+--                 {
+--                     "git-diff",
+--                     {
+--                         configs = {
+--                             icons = {
+--                                 added = "",
+--                                 changed = "",
+--                                 removed = "",
+--                             },
+--                             order = { "added", "changed", "removed" },
+--                         }
+--                     }
+--                 },
 --                 "%=",
---                 "diagnostics",
+--                 {
+--                     "diagnostics",
+--                     {
+--                         configs = {
+--                             icons = {
+--                                 ERROR = util.signs.Error,
+--                                 INFO = util.signs.Info,
+--                                 HINT = util.signs.Info,
+--                                 WARN = util.signs.Warn,
+--                             },
+--                             order = { "ERROR", "WARN", "INFO", "HINT" },
+--                         }
+--                     }
+--
+--                 },
 --                 "lsps-formatters",
 --                 -- "copilot",
 --                 -- "indent",
