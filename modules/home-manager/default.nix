@@ -3,6 +3,7 @@
   home.sessionVariables = {
     CLICOLOR = 1;
     EDITOR = "nvim";
+    VISUAL = "nvim";
     LC_CTYPE = "en_US.UTF-8";
     GPG_TTY = "$(tty)";
   };
@@ -47,6 +48,11 @@
     initExtra = ''
       eval "$(fnm env --use-on-cd)"
       [[ -e "''${HOME}/.workrc" ]] && source "''${HOME}/.workrc"
+
+      autoload -U edit-command-line
+      zle -N edit-command-line
+      bindkey '^xe' edit-command-line
+      bindkey '^x^e' edit-command-line
     '';
     shellAliases = {
       grep = "grep --color=auto";

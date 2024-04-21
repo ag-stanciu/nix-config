@@ -37,6 +37,7 @@
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
+      hack-font
       source-code-pro
       (nerdfonts.override { fonts = [ "Hasklig" "NerdFontsSymbolsOnly" ]; })
     ];
