@@ -166,6 +166,11 @@ return {
                     cmp.config.compare.order,
                 },
             },
+            view = {
+                entries = {
+                    follow_cursor = true,
+                }
+            }
         }
 
         autopairs.setup({

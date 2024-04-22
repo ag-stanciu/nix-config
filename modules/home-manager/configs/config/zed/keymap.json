@@ -16,7 +16,8 @@
       "space f f": "file_finder::Toggle",
       "shift-x": "pane::CloseActiveItem",
       "[ d": "editor::GoToDiagnostic",
-      "] d": "editor::GoToPrevDiagnostic"
+      "] d": "editor::GoToPrevDiagnostic",
+      "space n": "workspace::ToggleLeftDock"
     }
   },
   {

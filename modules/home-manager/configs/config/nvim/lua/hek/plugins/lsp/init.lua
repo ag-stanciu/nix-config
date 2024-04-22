@@ -25,7 +25,7 @@ return {
                 "jsonls",
                 "yamlls",
                 "graphql",
-                "zls",
+                -- "zls",
                 "prismals",
                 "nil_ls"
             }
@@ -128,7 +128,7 @@ return {
             'bashls',
             -- 'clangd',
             'nil_ls',
-            'zls',
+            -- 'zls',
             'prismals',
         }
         for _, server in ipairs(servers) do
