@@ -135,7 +135,7 @@ return {
                 },
             },
             provider = function(self)
-                return string.format("%s", self.mode_names[self.mode])
+                return string.format("%s ", self.mode_names[self.mode])
             end,
             hl = function(self)
                 local mode = self.mode:sub(1, 1)
@@ -314,10 +314,23 @@ return {
         }
 
         local FilePercent = {
+            init = function(self)
+                self.mode = vim.api.nvim_get_mode().mode
+                if not self.once then
+                    vim.api.nvim_create_autocmd("ModeChanged", {
+                        pattern = "*:*o",
+                        command = "redrawstatus",
+                    })
+                    self.once = true
+                end
+            end,
             condition = function()
                 return conditions.buffer_not_empty() and conditions.hide_in_width()
             end,
-            hl = { bg = colors.bg_dark, fg = colors.dark5 },
+            hl = function(self)
+                local mode = self.mode:sub(1, 1)
+                return { fg = VIMODE_COLORS[mode], bg = colors.bg_dark }
+            end,
             InvLeftSep,
             {
                 provider = "  %P ",
