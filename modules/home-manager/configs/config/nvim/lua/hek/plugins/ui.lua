@@ -168,5 +168,18 @@ return {
                 end,
             })
         end,
+    },
+    -- {
+    --     'folke/todo-comments.nvim',
+    --     event = 'VimEnter',
+    --     dependencies = { 'nvim-lua/plenary.nvim' },
+    --     opts = { signs = false }
+    -- }
+    {
+        "dmmulroy/ts-error-translator.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function ()
+            require("ts-error-translator").setup()
+        end
     }
 }

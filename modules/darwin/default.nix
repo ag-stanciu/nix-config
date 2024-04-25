@@ -91,6 +91,7 @@
       "google-chrome"
       "google-drive"
       "insomnium"
+      "jetbrains-toolbox"
       "kitty"
       "logi-options-plus"
       "maccy"
