@@ -5,35 +5,13 @@ return {
         lazy = true,
     },
     {
-        "rmehri01/onenord.nvim",
-        lazy = true,
-    },
-    {
-        "rebelot/kanagawa.nvim",
-        lazy = true,
-    },
-    {
         "neanias/everforest-nvim",
-        lazy = true,
-    },
-    {
-        "sainnhe/gruvbox-material",
         lazy = true,
     },
     {
         "jasonlong/poimandres.nvim",
         lazy = true,
     },
-    -- 'olimorris/onedark.nvim'
-    -- 'EdenEast/nightfox.nvim'
-    -- 'rmehri01/onenord.nvim',
-    -- "rebelot/kanagawa.nvim"
-    -- 'kvrohit/substrata.nvim'
-    -- 'kvrohit/rasmus.nvim'
-    -- 'sainnhe/gruvbox-material'
-    -- 'kaiuri/nvim-juliana'
-    -- 'olivercederborg/poimandres.nvim',
-
 
     -- UI
     {

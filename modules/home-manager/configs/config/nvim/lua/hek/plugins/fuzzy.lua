@@ -19,7 +19,8 @@ return {
             { "<leader>fw",      "<cmd> Telescope live_grep<CR>" },
             { "<leader>?",       "<cmd> Telescope oldfiles<CR>" },
             { "<leader>gt",      "<cmd> Telescope git_status<CR>" },
-            { "<leader>fr",      "<cmd> Telescope lsp_references<CR>" }
+            { "<leader>fr",      "<cmd> Telescope lsp_references<CR>" },
+            { "<leader>sr",      "<cmd> Telescope resume<CR>" }
         },
         config = function()
             local telescope = require("telescope")
@@ -102,6 +103,9 @@ return {
                             override_file_sorter = true,     -- override the file sorter
                             case_mode = "smart_case"         -- or "ignore_case" or "respect_case"
                             -- the default case_mode is "smart_case"
+                        },
+                        ["ui-select"] = {
+                            require("telescope.themes").get_dropdown(),
                         }
                     },
                 }

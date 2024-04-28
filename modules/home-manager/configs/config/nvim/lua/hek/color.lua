@@ -92,15 +92,6 @@ local grey9 = util.darken(colorscheme.bg_highlight, 0.5)
 local dark_red = util.darken(colorscheme.red, 0.5)
 vim.cmd("colorscheme tokyonight-night")
 
--- require("onenord").setup({
---     custom_colors = {
---         bg = "#1e222a",
---     }
--- })
--- local colorscheme = require("onenord.colors").load()
--- local grey9 = colorscheme.light_gray
--- local dark_red = colorscheme.dark_red
-
 local colors = vim.tbl_deep_extend("force", colorscheme, {
     statusline_bg = colorscheme.bg_statusline,
     statusline_div = colorscheme.bg_statusline,
@@ -110,58 +101,6 @@ local colors = vim.tbl_deep_extend("force", colorscheme, {
     -- bg_dark = "#2e3440",
     -- gray = colorscheme.terminal_black,
 })
-
--- kanagawa
--- require("kanagawa").setup({
---     theme = "dragon",
---     colors = {
---         theme = {
---             all = {
---                 ui = {
---                     bg_gutter = "none"
---                 }
---             }
---         }
---     },
---     overrides = function(colors)
---         local theme = colors.theme
---         return {
---             -- TelescopeTitle = { fg = theme.ui.special, bold = true },
---             -- TelescopePromptNormal = { bg = theme.ui.bg_p1 },
---             -- TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
---             -- TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
---             -- TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
---             -- TelescopePreviewNormal = { bg = theme.ui.bg_dim },
---             -- TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
---             Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
---             PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
---             PmenuSbar = { bg = theme.ui.bg_m1 },
---             PmenuThumb = { bg = theme.ui.bg_p2 },
---         }
---     end,
--- });
--- vim.cmd("colorscheme kanagawa-dragon")
--- local colorscheme = require("kanagawa.colors").setup().palette
--- local colors = vim.tbl_deep_extend("force", colorscheme, {
---     statusline_bg = colorscheme.dragonBlack0,
---     statusline_div = colorscheme.dragonGray3,
---     statusline_text = colorscheme.dragonWhite,
---     grey9 = colorscheme.dragonGray2,
---     dark_red = colorscheme.dragonRed,
---     -- bg_dark = "#2e3440",
---     -- gray = colorscheme.terminal_black,
---     bg = colorscheme.dragonBlack3,
---     bg_dark = colorscheme.dragonBlack1,
---     purple = colorscheme.dragonPink,
---     blue = colorscheme.dragonBlue,
---     orange = colorscheme.dragonOrange,
---     teal = colorscheme.dragonTeal,
---     yellow = colorscheme.dragonYellow,
---     cyan = colorscheme.dragonBlue2,
---     green = colorscheme.dragonGreen,
---     red = colorscheme.dragonRed,
--- })
-
 
 -- everforest
 -- require("everforest").setup({
@@ -255,27 +194,14 @@ local colors = vim.tbl_deep_extend("force", colorscheme, {
 --     -- gray = colorscheme.terminal_black,
 -- })
 
--- gruvbox material
--- vim.g.gruvbox_material_background = "hard"
--- -- vim.cmd("colorscheme gruvbox-material")
--- local gb_cfg = vim.fn['gruvbox_material#get_configuration']()
--- local palette = vim.fn['gruvbox_material#get_palette'](gb_cfg.background, gb_cfg.foreground, gb_cfg.colors_override)
--- vim.print(palette)
--- local colors = {
---     bg = palette.bg0[1],
---     statusline_bg = palette.bg_statusline1[1],
---     statusline_div = palette.bg_statusline1[1],
---     statusline_text = palette.fg0[1],
---     grey9 = palette.grey0[1],
---     dark_red = palette.red[1],
---     -- bg_dark = "#2e3440",
---     -- gray = colorscheme.terminal_black,
--- }
-
 -- require("poimandres").setup({
---     use_background = false
+--     style = "storm",
+--     transparent = true,
 -- })
--- local colorscheme = require("poimandres.colors")
+-- local colorscheme = require("poimandres.colors").setup({
+--     style = "storm",
+--     transparent = "true"
+-- })
 -- local colors = vim.tbl_deep_extend("force", colorscheme, {
 --     statusline_bg = colorscheme.bg,
 --     statusline_div = colorscheme.bg,
