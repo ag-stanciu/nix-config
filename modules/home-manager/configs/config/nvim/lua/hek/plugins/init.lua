@@ -1,7 +1,7 @@
 return {
     -- Colorschemes
     {
-        'folke/tokyonight.nvim',
+        "folke/tokyonight.nvim",
         lazy = true,
     },
     {
@@ -27,7 +27,7 @@ return {
     },
 
     {
-        'karb94/neoscroll.nvim',
+        "karb94/neoscroll.nvim",
         event = "VeryLazy",
         config = function()
             require("neoscroll").setup()
@@ -36,26 +36,26 @@ return {
 
     -- Misc
     {
-        'norcalli/nvim-colorizer.lua',
+        "norcalli/nvim-colorizer.lua",
         event = "BufReadPost",
         config = function()
             require("colorizer").setup()
         end
     },
     {
-        'kylechui/nvim-surround',
+        "echasnovski/mini.surround",
         event = "VeryLazy",
         opts = true,
     },
 
     {
-        'akinsho/git-conflict.nvim',
+        "akinsho/git-conflict.nvim",
         event = "BufReadPost",
         version = "*",
         opts = true
     },
     {
-        'luukvbaal/statuscol.nvim',
+        "luukvbaal/statuscol.nvim",
         event = "VeryLazy",
         config = true,
     },

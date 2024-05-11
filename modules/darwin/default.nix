@@ -9,6 +9,7 @@
     NSGlobalDomain.KeyRepeat = 1;
     NSGlobalDomain.ApplePressAndHoldEnabled = false;
     NSGlobalDomain.AppleFontSmoothing = 1;
+    NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
     dock = {
       autohide = true;
       mineffect = "scale";
