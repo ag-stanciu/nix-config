@@ -109,10 +109,10 @@ return {
                 ['<Tab>'] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item()
-                    elseif vim.snippet.jumpable(1) then
-                        vim.snippet.jump(1)
-                        -- elseif has_words_before() then
-                        --   cmp.complete()
+                    -- elseif vim.snippet.jumpable(1) then
+                    --     vim.snippet.jump(1)
+                    --     -- elseif has_words_before() then
+                    --     --   cmp.complete()
                     else
                         fallback()
                     end
@@ -120,8 +120,8 @@ return {
                 ['<S-Tab>'] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_prev_item()
-                    elseif vim.snippet.jumpable(-1) then
-                        vim.snippet.jump(-1)
+                    -- elseif vim.snippet.jumpable(-1) then
+                    --     vim.snippet.jump(-1)
                     else
                         fallback()
                     end

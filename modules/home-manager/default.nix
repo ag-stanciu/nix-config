@@ -11,6 +11,9 @@
     awscli2
     cargo
     curl
+    doit
+    fastfetch
+    ffmpeg
     fd
     fnm
     gnupg
@@ -23,6 +26,7 @@
     ripgrep
     ssm-session-manager-plugin
     wget
+    yt-dlp
   ];
 
   programs.git = {
@@ -92,7 +96,7 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    package = pkgs.neovim-nightly;
+    package = pkgs.neovim;
   };
   home.file.".config/nvim" = {
     # source = config.lib.file.mkOutOfStoreSymlink ./configs/config/nvim;

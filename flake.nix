@@ -15,10 +15,11 @@
     };
 
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs@{ self, nixpkgs, darwin, home-manager, neovim-nightly, ... }:
     let
-      overlays = [ neovim-nightly.overlay ];
+      overlays = [ neovim-nightly.overlays.default ];
       home-config = import ./modules/home-manager { inherit inputs; };
       darwinSystem = { system, username }:
         darwin.lib.darwinSystem

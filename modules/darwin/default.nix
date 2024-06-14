@@ -100,8 +100,10 @@
       "slack"
       "spotify"
       "the-unarchiver"
+      "visual-studio-code"
       "zed-preview"
       "zoom"
+      "zwift"
     ];
   };
 }
