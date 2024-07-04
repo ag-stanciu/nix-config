@@ -36,10 +36,10 @@
   '';
 
   fonts = {
-    fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       hack-font
       source-code-pro
+      maple-mono
       (nerdfonts.override { fonts = [ "Hasklig" "NerdFontsSymbolsOnly" ]; })
     ];
   };

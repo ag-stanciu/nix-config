@@ -16,7 +16,8 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                "tsserver",
+                -- "tsserver",
+                "vtsls",
                 "eslint",
                 "dockerls",
                 -- "terraformls",
@@ -27,7 +28,8 @@ return {
                 "graphql",
                 -- "zls",
                 "prismals",
-                "nil_ls"
+                "nil_ls",
+                "pylsp"
             }
         })
         local nvim_lsp = require('lspconfig')
@@ -37,8 +39,14 @@ return {
 
         -- Diagnostic keymaps
         vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-        vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+        -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+        -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+        vim.keymap.set('n', '[d', function()
+            vim.diagnostic.jump({ count = 1 })
+        end)
+        vim.keymap.set('n', ']d', function ()
+            vim.diagnostic.jump({ count = -1 })
+        end)
         vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
         vim.keymap.set('n', '<leader>l', lsp_lines.toggle)
 
@@ -97,10 +105,10 @@ return {
         end
 
         -- replace the default lsp diagnostic symbols
-        for type, icon in pairs(u.signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-        end
+        -- for type, icon in pairs(u.signs) do
+        --     local hl = "DiagnosticSign" .. type
+        --     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+        -- end
 
         vim.diagnostic.config {
             virtual_text = false,
@@ -108,11 +116,18 @@ return {
                 -- header = false,
                 source = true,
             },
-            signs = true,
             underline = false,
             update_in_insert = false,
             severity_sort = true,
-            virtual_lines = false
+            virtual_lines = false,
+            signs = {
+                text = {
+                    [vim.diagnostic.severity.ERROR] = u.signs.Error,
+                    [vim.diagnostic.severity.WARN] = u.signs.Warn,
+                    [vim.diagnostic.severity.INFO] = u.signs.Info,
+                    [vim.diagnostic.severity.HINT] = u.signs.Hint,
+                }
+            }
         }
 
         local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -153,8 +168,28 @@ return {
             }
         }
 
+        -- pylsp
+        nvim_lsp.pylsp.setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            flags = {
+                debounce_text_changes = 150
+            },
+            settings = {
+                pylsp = {
+                    plugins = {
+                        pycodestyle = {
+                            -- ignore = {'W391'},
+                            maxLineLength = 120
+                        }
+                    }
+                }
+            }
+        }
+
         -- custom settings servers
-        require('hek.lsp.tsserver').setup(on_attach, capabilities)
+        -- require('hek.lsp.tsserver').setup(on_attach, capabilities)
+        require('hek.lsp.vtsls').setup(on_attach, capabilities)
         require('hek.lsp.luals').setup(on_attach, capabilities)
         require('hek.lsp.yaml').setup(on_attach, capabilities)
         require('hek.lsp.gopls').setup(on_attach, capabilities)

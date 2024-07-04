@@ -364,10 +364,14 @@ return {
                 return conditions.buffer_not_empty() and conditions.hide_in_width() and conditions.has_diagnostics()
             end,
             static = {
-                error_icon = vim.fn.sign_getdefined("DiagnosticSignError")[1].text,
-                warn_icon = vim.fn.sign_getdefined("DiagnosticSignWarn")[1].text,
-                info_icon = vim.fn.sign_getdefined("DiagnosticSignInfo")[1].text,
-                hint_icon = vim.fn.sign_getdefined("DiagnosticSignHint")[1].text,
+                -- error_icon = vim.fn.sign_getdefined("DiagnosticSignError")[1].text,
+                -- warn_icon = vim.fn.sign_getdefined("DiagnosticSignWarn")[1].text,
+                -- info_icon = vim.fn.sign_getdefined("DiagnosticSignInfo")[1].text,
+                -- hint_icon = vim.fn.sign_getdefined("DiagnosticSignHint")[1].text,
+                error_icon = util.signs.Error,
+                warn_icon = util.signs.Warn,
+                info_icon = util.signs.Info,
+                hint_icon = util.signs.Hint,
             },
             init = function(self)
                 self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
@@ -380,25 +384,25 @@ return {
             Space,
             {
                 provider = function(self)
-                    return self.errors > 0 and (self.error_icon .. self.errors .. " ")
+                    return self.errors > 0 and (self.error_icon .. " " .. self.errors .. " ")
                 end,
                 hl = { fg = colors.red },
             },
             {
                 provider = function(self)
-                    return self.warnings > 0 and (self.warn_icon .. self.warnings .. " ")
+                    return self.warnings > 0 and (self.warn_icon .. " " .. self.warnings .. " ")
                 end,
                 hl = { fg = colors.yellow },
             },
             {
                 provider = function(self)
-                    return self.info > 0 and (self.info_icon .. self.info .. " ")
+                    return self.info > 0 and (self.info_icon .. " " .. self.info .. " ")
                 end,
                 hl = { fg = colors.fg },
             },
             {
                 provider = function(self)
-                    return self.hints > 0 and (self.hint_icon .. self.hints)
+                    return self.hints > 0 and (self.hint_icon .. " " .. self.hints)
                 end,
                 hl = { fg = colors.fg },
             },

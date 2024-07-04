@@ -9,23 +9,23 @@ return {
         gs.setup {
             numhl = false,
             signcolumn = true,
-            signs = {
-                add = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAdd", linehl = "GitSignsAdd" },
-                change = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChange", linehl = "GitSignsChange" },
-                delete = { hl = "GitSignsDelete", text = "▎", numhl = "GitSignsDelete", linehl = "GitSignsDelete" },
-                topdelete = {
-                    hl = "GitSignsDelete",
-                    text = "‾",
-                    numhl = "GitSignsDelete",
-                    linehl = "GitSignsDelete",
-                },
-                changedelete = {
-                    hl = "GitSignsChange",
-                    text = "~",
-                    numhl = "GitSignsChange",
-                    linehl = "GitSignsChange",
-                },
-            },
+            -- signs = {
+            --     add = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAdd", linehl = "GitSignsAdd" },
+            --     change = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChange", linehl = "GitSignsChange" },
+            --     delete = { hl = "GitSignsDelete", text = "▎", numhl = "GitSignsDelete", linehl = "GitSignsDelete" },
+            --     topdelete = {
+            --         hl = "GitSignsDelete",
+            --         text = "‾",
+            --         numhl = "GitSignsDelete",
+            --         linehl = "GitSignsDelete",
+            --     },
+            --     changedelete = {
+            --         hl = "GitSignsChange",
+            --         text = "~",
+            --         numhl = "GitSignsChange",
+            --         linehl = "GitSignsChange",
+            --     },
+            -- },
             watch_gitdir = {
                 interval = 100
             },
@@ -38,9 +38,9 @@ return {
                 virt_text_pos = 'eol',
                 ignore_whitespace = false,
             },
-            current_line_blame_formatter_opts = {
-                relative_time = false,
-            },
+            -- current_line_blame_formatter_opts = {
+            --     relative_time = false,
+            -- },
             update_debounce = 100,
         }
     end
