@@ -1,4 +1,4 @@
--- return {}
+-- return {}heir
 return {
     "rebelot/heirline.nvim",
     event = "VeryLazy",
@@ -352,8 +352,9 @@ return {
                             table.insert(names, server.name)
                         end
                     end
-                    -- return "  " .. table.concat(names, " ") .. " "
-                    return "  "
+                    -- return "  " .. table.concat(names, " ") .. " "
+                    -- return "  "
+                    return "  "
                 end,
             },
             InvRightSep,

@@ -35,14 +35,14 @@
     /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
   '';
 
-  fonts = {
-    packages = with pkgs; [
-      hack-font
-      source-code-pro
-      maple-mono
-      (nerdfonts.override { fonts = [ "Hasklig" "NerdFontsSymbolsOnly" ]; })
-    ];
-  };
+  # fonts = {
+  #   packages = with pkgs; [
+  #     hack-font
+  #     source-code-pro
+  #     maple-mono
+  #     (nerdfonts.override { fonts = [ "Hasklig" "NerdFontsSymbolsOnly" ]; })
+  #   ];
+  # };
 
   nix = {
     gc = {
@@ -89,6 +89,9 @@
       "bitwarden"
       "dbeaver-community"
       "docker"
+      "font-ibm-plex-mono"
+      "font-source-code-pro"
+      "font-symbols-only-nerd-font"
       "google-chrome"
       "google-drive"
       "insomnium"

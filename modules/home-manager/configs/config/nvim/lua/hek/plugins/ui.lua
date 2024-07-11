@@ -73,7 +73,7 @@ return {
         opts = {
             indent = {
                 char = '┊',
-                highlight = "IndentBlanklineChar",
+                -- highlight = "IndentBlanklineChar",
             },
             scope = { enabled = false },
             exclude = {

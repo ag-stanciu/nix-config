@@ -12,8 +12,8 @@
     "copilot": false
   },
   "buffer_font_size": 14,
-  "buffer_font_family": "Source Code Pro",
-  // "buffer_font_family": "Maple Mono",
+  // "buffer_font_family": "Source Code Pro",
+  "buffer_font_family": "IosevkaBlue",
   // "ui_font_family": "Source Code Pro",
   // "ui_font_size": 14,
   "theme": "Tokyo Night Storm",

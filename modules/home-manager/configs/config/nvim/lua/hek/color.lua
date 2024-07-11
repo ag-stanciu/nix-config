@@ -104,10 +104,12 @@ local colors = vim.tbl_deep_extend("force", colorscheme, {
     -- bg_dark = "#2e3440",
     -- gray = colorscheme.terminal_black,
 })
-
+--
 -- everforest
 -- require("everforest").setup({
 --     background = "hard",
+--     transparent_background_level = 2,
+--     float_style = "dim",
 --     on_highlights = function(hl, palette)
 --         hl.TelescopePromptNormal = { bg = palette.bg, }
 --         hl.TelescopeResultsNormal = { bg = palette.bg, }
@@ -187,13 +189,13 @@ local colors = vim.tbl_deep_extend("force", colorscheme, {
 -- local colorscheme = require("everforest.colours").generate_palette(conf, "dark")
 -- -- vim.print(vim.inspect(colorscheme))
 -- local colors = vim.tbl_deep_extend("force", colorscheme, {
---     bg = colorscheme.bg0,
---     statusline_bg = colorscheme.bg0,
+--     -- bg = colorscheme.bg0,
+--     statusline_bg = colorscheme.bg,
 --     statusline_div = colorscheme.bg,
 --     statusline_text = colorscheme.fg,
 --     grey9 = colorscheme.grey0,
 --     dark_red = colorscheme.red1,
---     bg_dark = colorscheme.bg1,
+--     bg_dark = colorscheme.bg0,
 --     -- gray = colorscheme.terminal_black,
 -- })
 
