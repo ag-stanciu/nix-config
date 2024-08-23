@@ -94,6 +94,7 @@
       "font-symbols-only-nerd-font"
       "google-chrome"
       "google-drive"
+      "iina"
       "insomnium"
       "jetbrains-toolbox"
       "kitty"
@@ -104,7 +105,7 @@
       "spotify"
       "the-unarchiver"
       "visual-studio-code"
-      "zed-preview"
+      "zed@preview"
       "zoom"
       "zwift"
     ];

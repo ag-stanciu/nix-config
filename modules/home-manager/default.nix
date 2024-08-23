@@ -12,6 +12,8 @@
     cargo
     curl
     doit
+    exiv2
+    exiftool
     fastfetch
     ffmpeg
     fd
@@ -20,6 +22,8 @@
     go
     hyperfine
     jq
+    jhead
+    parallel
     pinentry_mac
     pipx
     python3
